@@ -33,6 +33,22 @@ header div img {
     padding: 50px;
 }
 
+header div:nth-of-type(2) {
+    display: none;
+}
+
+header div span {
+    display: block;
+    height: 8px;
+    width: 60px;
+    background-color: #000;
+    margin: 4px 10px;
+}
+
+header div span:nth-of-type(1), header div span:nth-of-type(3) {
+    background-color: #DFAA5B;
+}
+
 header nav {
     display: flex;
     justify-content: space-between;
@@ -128,115 +144,98 @@ figcaption {
     font-size: 2.3rem;
     font-family: 'Ubuntu-Light';
     color: #957554;
+    margin-top: 10px;
 }
+
+
 
 /* ======== Pictures ========= */
 
 .rooms {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem 4rem;
 }
-.rooms h2 {
-    text-align: center;
+
+.roomRates {
     font-family: 'Ubuntu';
     font-size: 4rem;
-    color: #957554;
-    margin-bottom: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #DFAA5B;
 }
 
-.rooms .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 80px;
-}
-
-.rooms .gallery .twinroom {
-    background-image: url('../img/standard_twin_room.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: center;
-    width: 45vw;
-    height: 60vh;
-    border-radius: 15px;
-    margin: 0 auto;
-}
-
-.rooms .gallery .standardroom {
-    background-image: url('../img/standard_room.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    width: 45vw;
-    height: 60vh;
-    border-radius: 15px;
-    margin: 0 auto;
-}
-
-.rooms .gallery .standardviewroom {
-    background-image: url('../img/standard_view_room.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    width: 45vw;
-    height: 60vh;
-    border-radius: 15px;
-    margin: 0 auto;
-}
-
-.rooms .gallery .deluxeroom {
-    background-image: url('../img/deluxe_room.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    width: 45vw;
-    height: 60vh;
-    border-radius: 15px;
-    margin: 0 auto;
-}
-
-.rooms .gallery .deluxeroom h2,
-.rooms .gallery .standardviewroom h2,
-.rooms .gallery .twinroom h2,
-.rooms .gallery .standardroom h2 {
-    font-family: 'Ubuntu';
-    font-size: 3rem;
+.rooms h2 {
     color: white;
-    margin-bottom: 15px;
-}
-
-.rooms .gallery .deluxeroom a,
-.rooms .gallery .standardviewroom a,
-.rooms .gallery .twinroom a,
-.rooms .gallery .standardroom a {
     font-family: 'Ubuntu';
-    font-size: 2rem;
-    color: white;
-    background-color: #DFAA5B;
-    padding: 15px;
-    width: 15vw;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    text-decoration: none;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 20px;
     text-align: center;
 }
 
+.rooms .twinroom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+.rooms .twinroom:nth-of-type(1) {
+    background-image: url('../img/standard_room.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 500px;
+    height: 400px;
+}
+
+.rooms .twinroom:nth-of-type(2) {
+    background-image: url('../img/standard_view_room.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 500px;
+    height: 400px;
+}
+
+.rooms .twinroom:nth-of-type(3) {
+    background-image: url('../img/standard_twin_room.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 500px;
+    height: 400px;
+}
+
+.rooms .twinroom:nth-of-type(4) {
+    background-image: url('../img/deluxe_room.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 500px;
+    height: 400px;
+}
+
+.rooms .twinroom a {
+    font-family: 'Ubuntu';
+    font-size: 1.6rem;
+    text-decoration: none;
+    background-color: #DFAA5B;
+    border-radius: 10px;
+    /* width: 20%; */
+    padding: 10px 45px;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 2rem;
+}
 
 /* ========= BOOKING ========== */
 
@@ -365,9 +364,139 @@ footer .form a:hover {
 }
 
 
+/* ===== Media Queries ===== */
+
+@media only screen and (max-width: 600px) {
+    header {
+        height: 20vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header div:nth-of-type(2) {
+        display: block;
+    }
+
+    header div img {
+        padding: 1px;
+    }
+
+    header nav {
+        display: none;
+    }
 
 
+    .hero {
+        background: contain no-repeat;
+        background-size: 180vh;
+    }
 
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+
+    .hero a {
+        padding: 1vh;
+    }
+
+    /* //////  FACILITIES  //////  */
+
+    .facilities h2 {
+        font-size: 3rem;
+    }
+
+    .facilities .icons img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .facilities .icons figure figcaption {
+        font-size: 2rem;
+    }
+
+    /* //////  ROOMS  //////  */
+
+    .rooms h2 {
+        font-size: 3rem;
+    }
+
+    .rooms .twinroom:nth-of-type(1),
+    .rooms .twinroom:nth-of-type(2),
+    .rooms .twinroom:nth-of-type(3),
+    .rooms .twinroom:nth-of-type(4) {
+        width: 80%;
+    }
+
+
+    /* //////  BOOKING  //////  */
+
+    .booking h2 {
+        font-size: 3rem;
+    }
+    
+    .booking a {
+        font-size: 1.7rem;
+        width: 50%;
+    }
+
+    /* //////  FOOTER  //////  */
+
+    footer  {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 120vh;
+        padding: 0;
+    }
+
+    footer .logo img {
+        align-self: center;
+        width: 40%;
+        margin: 0 auto;
+        padding-bottom: 25px;
+    }
+
+    footer .logo h3 {
+        font-size: 2rem;
+    }
+
+    footer .logo p {
+        font-size: 1.7rem;
+    }
+
+    footer .legal {
+        text-align: left;
+        width: 52%;
+        margin-top: 15px;
+    }
+
+    footer .form {
+        width: 90%;
+    }
+
+    footer .form label {
+        font-size: 2.6rem;
+        align-self: center;
+    }
+
+    footer .form input {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    footer .form a {
+        width: 70%;
+        margin: 10px auto;
+
+    }
+
+}
 
 
 
